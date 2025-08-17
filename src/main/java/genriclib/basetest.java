@@ -31,7 +31,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-public class basetest  implements IConst {
+public class basetest  implements constants {
 
 	public ExtentReports extent;
 	public ExtentTest logger;
