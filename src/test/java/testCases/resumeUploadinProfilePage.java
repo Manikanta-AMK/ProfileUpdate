@@ -2,101 +2,78 @@ package testCases;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
-
-
 
 import genriclib.basetest;
 import pages.Loginpage;
 import pages.homePage;
 import pages.profilePage;
 
-public class resumeUploadinProfilePage extends loginTestCase {
+public class resumeUploadinProfilePage extends basetest {  // Better extend basetest, not loginTestCase
 
-	homePage hp;
-	Loginpage lp;
-	profilePage pp;
+    homePage hp;
+    Loginpage lp;
+    profilePage pp;
 
-//	@Test(groups={"Regression","Sanity","Smoke","Master"})
-//	public void loginTest() throws InterruptedException {
-//		try {
-//			
-//			hp = new homePage(driver);
-//			lp = new  Loginpage(driver);
-//			pp = new profilePage(driver);
-//			
-//			System.out.println("Launched url is "+ driver.getCurrentUrl());
-//			
-//			log.info("******* Started TC_03_Resume Upload Testcase *******");
-//			lp.enterUsernameAndPasswordAndLogin(prop.getProperty("username"), prop.getProperty("password"));
-//			log.info("login credentials enterd and logged into the account");
-//			hp.clickOnUserIcon();
-//			log.info("clicked on user icon");
-//			hp.clickOnViewAndUpdateProfileLink();
-//			log.info("clicked on ViewAndUpdateProfileLink");
-//			String path = "C:\\Users\\phani\\Downloads\\Manikanta_Arige.pdf";
-//			pp.uploadResume(path);
-//			log.info("clicked on UpdateResumeLink");
-//			
-////			// Locate file input element
-////	        WebElement uploadElement = driver.findElement(By.id("file-upload"));
-////
-////	        // Provide the file path directly
-////	        uploadElement.sendKeys("C:\\Users\\phani\\Downloads\\Manikanta_Arige.pdf");
-//
-//	        // Click on upload button
-//	        driver.findElement(By.id("file-submit")).click();
-//			
-//		} catch (Exception e) {
-//			Assert.fail();
-//		}
-//		log.info("******* Finished TC_03_Resume Upload Testcase *******");
-//	}
-//	
-	
-	@Test(groups={"Regression","Sanity","Smoke","Master"})
-	public void loginTest() throws InterruptedException {
-	    try {
-	        hp = new homePage(driver);
-	        lp = new Loginpage(driver);
-	        pp = new profilePage(driver);
+    @Test(groups={"Regression","Sanity","Smoke","Master"})
+    public void uploadResumeTest() {
+        try {
+            hp = new homePage(driver);
+            lp = new Loginpage(driver);
+            pp = new profilePage(driver);
 
-	        System.out.println("Launched url is " + driver.getCurrentUrl());
+            log.info("******* Started TC_03_Resume Upload Testcase *******");
+            lp.enterUsernameAndPasswordAndLogin(prop.getProperty("username"), prop.getProperty("password"));
+            log.info("Login successful with provided credentials");
 
-	        log.info("******* Started TC_03_Resume Upload Testcase *******");
-	        lp.enterUsernameAndPasswordAndLogin(prop.getProperty("username"), prop.getProperty("password"));
-	        log.info("login credentials entered and logged into the account");
+            hp.clickOnUserIcon();
+            log.info("Clicked on user icon");
+            hp.clickOnViewAndUpdateProfileLink();
+            log.info("Clicked on ViewAndUpdateProfileLink");
 
-	        hp.clickOnUserIcon();
-	        log.info("clicked on user icon");
-	        hp.clickOnViewAndUpdateProfileLink();
-	        log.info("clicked on ViewAndUpdateProfileLink");
-	        
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='dummyUpload typ-14Bold']")));
 
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='dummyUpload typ-14Bold']")));
-			
-	        // ✅ Upload resume
-	        pp.uploadResume("C:\\Users\\phani\\Downloads\\Manikanta_Arige.pdf");
-	        log.info("resume uploaded successfully");
+            // Trigger upload action from profilePage
+            pp.uploadResume();
+            log.info("Clicked on upload resume link");
 
-	        // Optional: Verify if resume upload success message appears
-	        // WebElement successMsg = driver.findElement(By.xpath("//div[contains(text(),'Upload successful')]"));
-	        // Assert.assertTrue(successMsg.isDisplayed());
+            // ✅ Copy file path to clipboard
+            String filePath = "C:\\Users\\phani\\Downloads\\Manikanta_Arige.pdf";
+            StringSelection fileselection = new StringSelection(filePath);
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(fileselection, null);
 
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	        Assert.fail("Test failed due to: " + e.getMessage());
-	    }
-	    log.info("******* Finished TC_03_Resume Upload Testcase *******");
-	}
+            // ✅ Use Robot to paste and submit
+            Robot rb = new Robot();
+            rb.delay(2000);
+            rb.keyPress(KeyEvent.VK_CONTROL);
+            rb.keyPress(KeyEvent.VK_V);
+            rb.keyRelease(KeyEvent.VK_V);
+            rb.keyRelease(KeyEvent.VK_CONTROL);
 
-	
-	
+            rb.keyPress(KeyEvent.VK_ENTER);
+            rb.keyRelease(KeyEvent.VK_ENTER);
+
+            log.info("Resume uploaded successfully");
+
+            // ✅ Optional: Verify success message (depends on app)
+            // WebElement successMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(
+            //         By.xpath("//div[contains(text(),'Upload successful')]")));
+            // Assert.assertTrue(successMsg.isDisplayed(), "Resume upload confirmation not found!");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail("Test failed due to: " + e.getMessage());
+        }
+        log.info("******* Finished TC_03_Resume Upload Testcase *******");
+    }
 }

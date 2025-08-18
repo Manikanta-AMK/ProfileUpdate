@@ -13,12 +13,18 @@ public class profilePage extends basePage{
 		super(driver);
 	}
 	
-	@FindBy(xpath = "//input[@class='dummyUpload typ-14Bold']") 
-    WebElement uploadResumeInput;
+//	@FindBy(xpath = "//input[@id='attachCV']") WebElement uploadResumeInput;
+    @FindBy(xpath="//input[@class=\"dummyUpload typ-14Bold\"]") WebElement resumeupload;
 
     // Method to upload file
-    public void uploadResume(String filePath) {
-        uploadResumeInput.sendKeys(filePath);
+    public void uploadResume() 
+    {
+    	resumeupload.click();
+    }
+	
+    public void uploadResume(String filePath) 
+    {
+    	resumeupload.sendKeys(filePath);
     }
 	
 	
