@@ -15,9 +15,11 @@ public class profilePage extends basePage{
 	
 //	@FindBy(xpath = "//input[@id='attachCV']") WebElement uploadResumeInput;
     @FindBy(xpath="//input[@class=\"dummyUpload typ-14Bold\"]") WebElement resumeupload;
+    @FindBy(xpath="//p[@class='msg']") WebElement successMsg;
+    
 
     // Method to upload file
-    public void uploadResume() 
+    public void clickOnUploadResume() 
     {
     	resumeupload.click();
     }
@@ -25,6 +27,11 @@ public class profilePage extends basePage{
     public void uploadResume(String filePath) 
     {
     	resumeupload.sendKeys(filePath);
+    }
+    
+    public WebElement MsgSuccess() 
+    {
+    	return successMsg;
     }
 	
 	

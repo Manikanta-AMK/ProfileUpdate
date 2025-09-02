@@ -11,8 +11,8 @@
       <class name="testCases.resumeUploadinProfilePage">
         <methods>
           <include name="teardown"/>
+          <include name="uploadResume"/>
           <include name="initialization"/>
-          <include name="loginTest"/>
         </methods>
       </class> <!-- testCases.resumeUploadinProfilePage -->
     </classes>

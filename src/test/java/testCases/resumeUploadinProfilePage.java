@@ -1,31 +1,34 @@
 package testCases;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-
+import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import genriclib.basetest;
 import pages.Loginpage;
 import pages.homePage;
 import pages.profilePage;
 
-public class resumeUploadinProfilePage extends basetest {  // Better extend basetest, not loginTestCase
+public class resumeUploadinProfilePage extends basetest {
 
     homePage hp;
     Loginpage lp;
     profilePage pp;
+    WebDriverWait wait;
 
-    @Test(groups={"Regression","Sanity","Smoke","Master"})
-    public void uploadResumeTest() {
+    @Test(priority = 1, groups = {"Regression","Sanity","Smoke","Master"})
+    public void clickOnUpdatePrifileLink() {
         try {
             hp = new homePage(driver);
             lp = new Loginpage(driver);
@@ -40,17 +43,27 @@ public class resumeUploadinProfilePage extends basetest {  // Better extend base
             hp.clickOnViewAndUpdateProfileLink();
             log.info("Clicked on ViewAndUpdateProfileLink");
 
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            wait = new WebDriverWait(driver, Duration.ofSeconds(20));
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='dummyUpload typ-14Bold']")));
 
-            // Trigger upload action from profilePage
-            pp.uploadResume();
-            log.info("Clicked on upload resume link");
+           
 
+        } catch (Exception e) {
+            Assert.fail("Test method failed: " + e.getMessage());
+        }
+    }
+
+    @Test(priority = 2)
+    public void uploadResume() throws IOException, AWTException, InterruptedException {
+        try {
+        	
+        	 pp.clickOnUploadResume();
+             log.info("Clicked on upload resume link");
+             
             // ✅ Copy file path to clipboard
-            String filePath = "C:\\Users\\phani\\Downloads\\Manikanta_Arige.pdf";
-            StringSelection fileselection = new StringSelection(filePath);
-            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(fileselection, null);
+            String filePath = "C:\\Users\\phani\\Downloads\\Manikanta Resume.pdf";
+            StringSelection fileSelection = new StringSelection(filePath);
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(fileSelection, null);
 
             // ✅ Use Robot to paste and submit
             Robot rb = new Robot();
@@ -65,10 +78,11 @@ public class resumeUploadinProfilePage extends basetest {  // Better extend base
 
             log.info("Resume uploaded successfully");
 
-            // ✅ Optional: Verify success message (depends on app)
-            // WebElement successMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(
-            //         By.xpath("//div[contains(text(),'Upload successful')]")));
-            // Assert.assertTrue(successMsg.isDisplayed(), "Resume upload confirmation not found!");
+            // ✅ Wait for success message
+            wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            WebElement successMsg = wait.until(ExpectedConditions.visibilityOf(pp.MsgSuccess()));
+            Assert.assertTrue(successMsg.isDisplayed(), "Resume upload confirmation not found!");
+            log.info("Success message is displayed");
 
         } catch (Exception e) {
             e.printStackTrace();
