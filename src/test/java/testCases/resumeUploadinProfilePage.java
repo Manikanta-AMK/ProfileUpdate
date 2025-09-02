@@ -82,7 +82,7 @@ public class resumeUploadinProfilePage extends basetest {
             wait = new WebDriverWait(driver, Duration.ofSeconds(20));
             WebElement successMsg = wait.until(ExpectedConditions.visibilityOf(pp.MsgSuccess()));
             Assert.assertTrue(successMsg.isDisplayed(), "Resume upload confirmation not found!");
-            log.info("Success message is displayed");
+            log.info("Success message is displayed!");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -90,4 +90,5 @@ public class resumeUploadinProfilePage extends basetest {
         }
         log.info("******* Finished TC_03_Resume Upload Testcase *******");
     }
+    
 }
