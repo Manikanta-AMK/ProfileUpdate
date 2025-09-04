@@ -20,7 +20,7 @@ import pages.Loginpage;
 import pages.homePage;
 import pages.profilePage;
 
-public class resumeUploadinProfilePage extends basetest {
+public class resumeUploadingProfilePage extends basetest {
 
     homePage hp;
     Loginpage lp;

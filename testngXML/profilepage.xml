@@ -9,7 +9,7 @@
   <parameter name="os" value="windows"></parameter>
 		<parameter name="browser" value="chrome"></parameter>
     <classes>
-      <class name="testCases.resumeUploadinProfilePage"/>
+      <class name="testCases.resumeUploadingProfilePage"/>
     </classes>
   </test> <!-- homePagetestcase -->
 </suite> <!-- Suite -->
