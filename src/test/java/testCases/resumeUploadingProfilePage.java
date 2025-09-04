@@ -56,7 +56,10 @@ public class resumeUploadingProfilePage extends basetest {
     @Test(priority = 2)
     public void uploadResume() throws IOException, AWTException, InterruptedException {
         try {
-        	
+        	 WebElement txtResume = pp.getTextResume();
+        	 wait.until(ExpectedConditions.elementToBeClickable(txtResume));
+        	 log.info("Resume is text is displayed: "+ txtResume.getText());
+        	 System.out.println("Resume is text is displayed: "+ txtResume.getText());
         	 pp.clickOnUploadResume();
              log.info("Clicked on upload resume link");
              
@@ -83,6 +86,9 @@ public class resumeUploadingProfilePage extends basetest {
             WebElement successMsg = wait.until(ExpectedConditions.visibilityOf(pp.MsgSuccess()));
             Assert.assertTrue(successMsg.isDisplayed(), "Resume upload confirmation not found!");
             log.info("Success message is displayed!");
+            
+            Assert.assertEquals(pp.profileUpdateToToday(), false);
+            log.info("Profile update status changed to today");
 
         } catch (Exception e) {
             e.printStackTrace();
