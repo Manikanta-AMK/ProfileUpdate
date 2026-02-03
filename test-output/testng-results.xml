@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-03T11:00:06 IST" name="Suite" finished-at="2025-09-03T11:00:24 IST" duration-ms="18055">
+  <suite started-at="2026-02-03T10:24:20 IST" name="Suite" finished-at="2026-02-03T10:24:33 IST" duration-ms="13634">
     <groups>
       <group name="Master">
-        <method signature="resumeUploadingProfilePage.clickOnUpdatePrifileLink()[pri:1, instance:testCases.resumeUploadingProfilePage@609e8838]" name="clickOnUpdatePrifileLink" class="testCases.resumeUploadingProfilePage"/>
+        <method signature="resumeUploadingProfilePage.clickOnUpdateProfileLink()[pri:1, instance:testCases.resumeUploadingProfilePage@609e8838]" name="clickOnUpdateProfileLink" class="testCases.resumeUploadingProfilePage"/>
       </group> <!-- Master -->
       <group name="Sanity">
-        <method signature="resumeUploadingProfilePage.clickOnUpdatePrifileLink()[pri:1, instance:testCases.resumeUploadingProfilePage@609e8838]" name="clickOnUpdatePrifileLink" class="testCases.resumeUploadingProfilePage"/>
+        <method signature="resumeUploadingProfilePage.clickOnUpdateProfileLink()[pri:1, instance:testCases.resumeUploadingProfilePage@609e8838]" name="clickOnUpdateProfileLink" class="testCases.resumeUploadingProfilePage"/>
       </group> <!-- Sanity -->
       <group name="Regression">
-        <method signature="resumeUploadingProfilePage.clickOnUpdatePrifileLink()[pri:1, instance:testCases.resumeUploadingProfilePage@609e8838]" name="clickOnUpdatePrifileLink" class="testCases.resumeUploadingProfilePage"/>
+        <method signature="resumeUploadingProfilePage.clickOnUpdateProfileLink()[pri:1, instance:testCases.resumeUploadingProfilePage@609e8838]" name="clickOnUpdateProfileLink" class="testCases.resumeUploadingProfilePage"/>
       </group> <!-- Regression -->
       <group name="Smoke">
-        <method signature="resumeUploadingProfilePage.clickOnUpdatePrifileLink()[pri:1, instance:testCases.resumeUploadingProfilePage@609e8838]" name="clickOnUpdatePrifileLink" class="testCases.resumeUploadingProfilePage"/>
+        <method signature="resumeUploadingProfilePage.clickOnUpdateProfileLink()[pri:1, instance:testCases.resumeUploadingProfilePage@609e8838]" name="clickOnUpdateProfileLink" class="testCases.resumeUploadingProfilePage"/>
       </group> <!-- Smoke -->
     </groups>
-    <test started-at="2025-09-03T11:00:06 IST" name="resumeUploadinProfilePage" finished-at="2025-09-03T11:00:24 IST" duration-ms="18055">
+    <test started-at="2026-02-03T10:24:20 IST" name="resumeUploadinProfilePage" finished-at="2026-02-03T10:24:33 IST" duration-ms="13634">
       <class name="testCases.resumeUploadingProfilePage">
-        <test-method is-config="true" signature="initialization(java.lang.String,java.lang.String)[pri:0, instance:testCases.resumeUploadingProfilePage@609e8838]" started-at="2025-09-03T11:00:06 IST" name="initialization" finished-at="2025-09-03T11:00:13 IST" duration-ms="6509" status="PASS">
+        <test-method is-config="true" signature="initialization(java.lang.String,java.lang.String)[pri:0, instance:testCases.resumeUploadingProfilePage@609e8838]" started-at="2026-02-03T10:24:20 IST" name="initialization" finished-at="2026-02-03T10:24:24 IST" duration-ms="4353" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -35,15 +35,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialization -->
-        <test-method signature="clickOnUpdatePrifileLink()[pri:1, instance:testCases.resumeUploadingProfilePage@609e8838]" started-at="2025-09-03T11:00:13 IST" name="clickOnUpdatePrifileLink" finished-at="2025-09-03T11:00:17 IST" duration-ms="4562" status="PASS">
+        <test-method signature="clickOnUpdateProfileLink()[pri:1, instance:testCases.resumeUploadingProfilePage@609e8838]" started-at="2026-02-03T10:24:24 IST" name="clickOnUpdateProfileLink" finished-at="2026-02-03T10:24:29 IST" duration-ms="4386" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickOnUpdatePrifileLink -->
-        <test-method signature="uploadResume()[pri:2, instance:testCases.resumeUploadingProfilePage@609e8838]" started-at="2025-09-03T11:00:17 IST" name="uploadResume" finished-at="2025-09-03T11:00:23 IST" duration-ms="6187" status="PASS">
+        </test-method> <!-- clickOnUpdateProfileLink -->
+        <test-method signature="uploadResume()[pri:2, instance:testCases.resumeUploadingProfilePage@609e8838]" started-at="2026-02-03T10:24:29 IST" name="uploadResume" finished-at="2026-02-03T10:24:33 IST" duration-ms="4205" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- uploadResume -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testCases.resumeUploadingProfilePage@609e8838]" started-at="2025-09-03T11:00:23 IST" name="teardown" finished-at="2025-09-03T11:00:24 IST" duration-ms="305" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testCases.resumeUploadingProfilePage@609e8838]" started-at="2026-02-03T10:24:33 IST" name="teardown" finished-at="2026-02-03T10:24:33 IST" duration-ms="306" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

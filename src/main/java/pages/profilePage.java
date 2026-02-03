@@ -14,10 +14,12 @@ public class profilePage extends basePage{
 	}
 	
 //	@FindBy(xpath = "//input[@id='attachCV']") WebElement uploadResumeInput;
-    @FindBy(xpath="//input[@class=\"dummyUpload typ-14Bold\"]") WebElement resumeupload;
+    @FindBy(xpath="//input[@value=\"Update resume\"]") WebElement resumeupload;
     @FindBy(xpath="//p[@class='msg']") WebElement successMsg;
     @FindBy(xpath="//span[@class='typ-14Medium mod-date-val']") WebElement updateToToday;
     @FindBy(xpath="//div[@class='s12 typ-16Bold']") WebElement txtResume;
+    @FindBy(xpath="//span[@class=\"typ-14Regular mode-date-wrap \"]") WebElement profileUpdatedDay;
+  
     
     // Method to upload file
     public void clickOnUploadResume() 
@@ -35,14 +37,15 @@ public class profilePage extends basePage{
     	return successMsg;
     }
     
-    public boolean profileUpdateToToday() 
+    public String profileUpdateToToday() 
     {
-    	return successMsg.isDisplayed();
+    	return profileUpdatedDay.getText();
+    	
     }
 	
     public WebElement getTextResume() 
     {
-    	return successMsg;
+    	return txtResume;
     }
 	
 }

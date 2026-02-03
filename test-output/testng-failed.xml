@@ -8,13 +8,13 @@
     <parameter name="os" value="windows"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.resumeUploadinProfilePage">
+      <class name="testCases.resumeUploadingProfilePage">
         <methods>
           <include name="teardown"/>
-          <include name="uploadResume"/>
           <include name="initialization"/>
+          <include name="uploadResume"/>
         </methods>
-      </class> <!-- testCases.resumeUploadinProfilePage -->
+      </class> <!-- testCases.resumeUploadingProfilePage -->
     </classes>
   </test> <!-- resumeUploadinProfilePage(failed) -->
 </suite> <!-- Failed suite [Suite] -->

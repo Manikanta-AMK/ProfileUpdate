@@ -28,7 +28,7 @@ public class resumeUploadingProfilePage extends basetest {
     WebDriverWait wait;
 
     @Test(priority = 1, groups = {"Regression","Sanity","Smoke","Master"})
-    public void clickOnUpdatePrifileLink() {
+    public void clickOnUpdateProfileLink() {
         try {
             hp = new homePage(driver);
             lp = new Loginpage(driver);
@@ -64,7 +64,7 @@ public class resumeUploadingProfilePage extends basetest {
              log.info("Clicked on upload resume link");
              
             // ✅ Copy file path to clipboard
-            String filePath = "C:\\Users\\phani\\Downloads\\Manikanta Resume.pdf";
+            String filePath ="C:\\Users\\phani\\Downloads\\Manikanta_A.pdf";
             StringSelection fileSelection = new StringSelection(filePath);
             Toolkit.getDefaultToolkit().getSystemClipboard().setContents(fileSelection, null);
 
@@ -87,7 +87,8 @@ public class resumeUploadingProfilePage extends basetest {
             Assert.assertTrue(successMsg.isDisplayed(), "Resume upload confirmation not found!");
             log.info("Success message is displayed!");
             
-            Assert.assertEquals(pp.profileUpdateToToday(), false);
+            String updationTxt = "Profile last updated - Today";
+            Assert.assertEquals(pp.profileUpdateToToday(), updationTxt, "profile not be updated");
             log.info("Profile update status changed to today");
 
         } catch (Exception e) {

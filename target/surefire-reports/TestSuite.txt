@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.461 s - in TestSuite
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 82.345 s <<< FAILURE! - in TestSuite
+testCases.resumeUploadingProfilePage.uploadResume  Time elapsed: 30.909 s  <<< FAILURE!
+java.lang.AssertionError: Test failed due to: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //p[@class='msg']' (tried for 20 second(s) with 500 milliseconds interval)
+	at testCases.resumeUploadingProfilePage.uploadResume(resumeUploadingProfilePage.java:95)
+

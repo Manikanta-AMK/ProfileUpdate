@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.resumeUploadinProfilePage">
+      <class name="testCases.resumeUploadingProfilePage">
         <methods>
-          <include name="uploadResumeTest"/>
           <include name="teardown"/>
-          <include name="uploadResume"/>
           <include name="initialization"/>
+          <include name="clickOnUpdatePrifileLink"/>
+          <include name="uploadResume"/>
         </methods>
-      </class> <!-- testCases.resumeUploadinProfilePage -->
+      </class> <!-- testCases.resumeUploadingProfilePage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

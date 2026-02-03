@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results retried="1" ignored="1" total="4" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-04T08:44:26 IST" name="Suite" finished-at="2025-09-04T08:44:45 IST" duration-ms="19478">
+  <suite started-at="2025-12-30T10:30:45 IST" name="Suite" finished-at="2025-12-30T10:32:04 IST" duration-ms="78421">
     <groups>
       <group name="Master">
         <method signature="resumeUploadingProfilePage.clickOnUpdatePrifileLink()[pri:1, instance:testCases.resumeUploadingProfilePage@18df8434]" name="clickOnUpdatePrifileLink" class="testCases.resumeUploadingProfilePage"/>
@@ -17,9 +17,9 @@
         <method signature="resumeUploadingProfilePage.clickOnUpdatePrifileLink()[pri:1, instance:testCases.resumeUploadingProfilePage@18df8434]" name="clickOnUpdatePrifileLink" class="testCases.resumeUploadingProfilePage"/>
       </group> <!-- Smoke -->
     </groups>
-    <test started-at="2025-09-04T08:44:26 IST" name="resumeUploadinProfilePage" finished-at="2025-09-04T08:44:45 IST" duration-ms="19478">
+    <test started-at="2025-12-30T10:30:45 IST" name="resumeUploadinProfilePage" finished-at="2025-12-30T10:32:04 IST" duration-ms="78421">
       <class name="testCases.resumeUploadingProfilePage">
-        <test-method is-config="true" signature="initialization(java.lang.String,java.lang.String)[pri:0, instance:testCases.resumeUploadingProfilePage@18df8434]" started-at="2025-09-04T08:44:26 IST" name="initialization" finished-at="2025-09-04T08:44:33 IST" duration-ms="6868" status="PASS">
+        <test-method is-config="true" signature="initialization(java.lang.String,java.lang.String)[pri:0, instance:testCases.resumeUploadingProfilePage@18df8434]" started-at="2025-12-30T10:30:46 IST" name="initialization" finished-at="2025-12-30T10:30:57 IST" duration-ms="11428" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -35,15 +35,85 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialization -->
-        <test-method signature="clickOnUpdatePrifileLink()[pri:1, instance:testCases.resumeUploadingProfilePage@18df8434]" started-at="2025-09-04T08:44:33 IST" name="clickOnUpdatePrifileLink" finished-at="2025-09-04T08:44:39 IST" duration-ms="5378" status="PASS">
+        <test-method signature="clickOnUpdatePrifileLink()[pri:1, instance:testCases.resumeUploadingProfilePage@18df8434]" started-at="2025-12-30T10:30:57 IST" name="clickOnUpdatePrifileLink" finished-at="2025-12-30T10:31:01 IST" duration-ms="4363" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickOnUpdatePrifileLink -->
-        <test-method signature="uploadResume()[pri:2, instance:testCases.resumeUploadingProfilePage@18df8434]" started-at="2025-09-04T08:44:39 IST" name="uploadResume" finished-at="2025-09-04T08:44:45 IST" duration-ms="6152" status="PASS">
+        <test-method retried="true" signature="uploadResume()[pri:2, instance:testCases.resumeUploadingProfilePage@18df8434]" started-at="2025-12-30T10:31:01 IST" name="uploadResume" finished-at="2025-12-30T10:31:32 IST" duration-ms="30635" status="SKIP">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Test failed due to: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //p[@class='msg']' (tried for 20 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Test failed due to: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //p[@class='msg']' (tried for 20 second(s) with 500 milliseconds interval)
+at org.testng.Assert.fail(Assert.java:111)
+at testCases.resumeUploadingProfilePage.uploadResume(resumeUploadingProfilePage.java:95)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- uploadResume -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testCases.resumeUploadingProfilePage@18df8434]" started-at="2025-09-04T08:44:45 IST" name="teardown" finished-at="2025-09-04T08:44:45 IST" duration-ms="290" status="PASS">
+        <test-method signature="uploadResume()[pri:2, instance:testCases.resumeUploadingProfilePage@18df8434]" started-at="2025-12-30T10:31:32 IST" name="uploadResume" finished-at="2025-12-30T10:32:03 IST" duration-ms="30650" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Test failed due to: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //p[@class='msg']' (tried for 20 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Test failed due to: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //p[@class='msg']' (tried for 20 second(s) with 500 milliseconds interval)
+at org.testng.Assert.fail(Assert.java:111)
+at testCases.resumeUploadingProfilePage.uploadResume(resumeUploadingProfilePage.java:95)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:249)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- uploadResume -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testCases.resumeUploadingProfilePage@18df8434]" started-at="2025-12-30T10:32:03 IST" name="teardown" finished-at="2025-12-30T10:32:04 IST" duration-ms="589" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
